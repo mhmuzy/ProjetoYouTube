@@ -7,6 +7,8 @@ import Hitss.Treinamento.Repositorios.*;
 public class Controller {
 
 	public static void play() {
+		try {
+			
 		
 		System.out.println("");
 		System.out.println("      Hitss Treinamento");
@@ -24,6 +26,8 @@ public class Controller {
 		
 		switch (tok) {
 		case 1:
+			try {
+				
 			
 			int[] codigo = new int[5];
 			codigo[1] = 1;
@@ -83,12 +87,41 @@ public class Controller {
 				
 				VideoRepositorio rep = new VideoRepositorio();
 				rep.play(video);
+				
+				System.out.println("");
+				System.out.println("---------------------");
+				System.out.println("(1) - Dar Pause");
+				System.out.println("(2) - Dar um Curtir");
+				System.out.println("---------------------");
+				System.out.println("");
+				int ponteiro = teclado.nextInt();
+				System.out.println("");
+				if (ponteiro == 1) {
+					rep.pause();
+				} else if (ponteiro == 2) {
+					rep.like(video.getCurtidas());
+				} else {
+					System.out.println("");
+					System.out.println("Opção Inválida");
+				} 
+			}
+			} catch (Exception e) {
+				System.out.println("");
+				System.out.println("Opção Inválida");
 			}
 			break;
-
+		case 2:
+			System.out.println("");
+			System.out.println("O Vídeo Continua Parado.");
+			break;
 		default:
+			System.out.println("");
+			System.out.println("Opção Inválida.");
 			break;
 		}
-		
+		} catch (Exception e) {
+			System.out.println("");
+			System.out.println("Opção Inválida.");
+		}
 	}	
 }

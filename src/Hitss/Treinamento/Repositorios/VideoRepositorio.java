@@ -20,14 +20,15 @@ public class VideoRepositorio implements IAcoesVideo {
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("");
+		System.out.println("Video Pausado ||");
 	}
 
 	@Override
-	public void like() {
-		// TODO Auto-generated method stub
-		
+	public void like(int curt) {
+		curt++;
+		System.out.println("");
+		System.out.println("O Nº de curtidas desse vídeo foi para: " + curt);
 	}
 
 }
